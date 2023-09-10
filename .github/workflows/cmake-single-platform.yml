@@ -69,7 +69,6 @@ jobs:
         with:
           name: package
       - shell: bash
-        run: |
-          sudo apt install ./ip_filter-0.0.${{ github.run_number }}-Linux.deb
-          sudo cat /usr/bin/ip_filter.tsv | ip_filter | md5sum
+      - run: sudo apt install ./ip_filter-0.0.${{ github.run_number }}-Linux.deb
+      - run: sudo cat /usr/bin/ip_filter.tsv | ip_filter | md5sum
 
