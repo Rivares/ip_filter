@@ -65,7 +65,7 @@ jobs:
     steps:
       # Download package
       - name: Download deb package
-        uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v3
         with:
           name: package
       - shell: bash
