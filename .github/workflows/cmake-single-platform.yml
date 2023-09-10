@@ -63,14 +63,14 @@ jobs:
     needs: [job_build]
     runs-on: ubuntu-latest
     steps:
-      # Download package
       - name: Download deb package
         uses: actions/download-artifact@v3
         with:
           name: package
       - shell: bash
         run: |
-            sudo apt install ./ip_filter-0.0.${{ github.run_number }}-Linux.deb
+          sudo apt install ./ip_filter-0.0.${{ github.run_number }}-Linux.deb
       - name: Checking
-      - run: sudo cat /usr/bin/ip_filter.tsv | ip_filter | md5sum
+        run: |
+          sudo cat /usr/bin/ip_filter.tsv | ip_filter | md5sum
 
