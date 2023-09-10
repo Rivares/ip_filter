@@ -42,7 +42,7 @@ set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Maintainer <mm@example.com>")
 
 set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/Debian/postinst")
 
-set(CPACK_DEBIAN_PACKAGE_DEPENDS libc6 libstdc++6 libgcc-s1 libgtest-dev libgmock-dev libtbb-dev libgl1-mesa-dev)
+set(CPACK_DEBIAN_PACKAGE_DEPENDS libgtest-dev libgmock-dev libtbb-dev libgl1-mesa-dev)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 install(FILES ip_filter.tsv DESTINATION bin)
