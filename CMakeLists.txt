@@ -28,7 +28,7 @@ add_executable(${PROJECT_NAME}
 )
 target_link_libraries(ip_filter Qt${QT_VERSION_MAJOR}::Core)
 
-
+configure_file(ip_filter.tsv ${CMAKE_CURRENT_BINARY_DIR}/ip_filter.tsv COPYONLY)
 
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
 set(CPACK_VERBATIM_VARIABLES ON)
