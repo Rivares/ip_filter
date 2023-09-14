@@ -72,5 +72,6 @@ jobs:
           sudo apt install ./ip_filter-0.0.${{ github.run_number }}-Linux.deb
       - name: Checking
         run: |
+          sudo cd /usr/bin
           sudo cat ip_filter | md5sum
 
