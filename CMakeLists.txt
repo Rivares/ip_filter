@@ -19,14 +19,14 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
+#find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
+#find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 add_executable(${PROJECT_NAME}
   main.cpp
   lib.hpp
 )
-target_link_libraries(ip_filter Qt${QT_VERSION_MAJOR}::Core)
+#target_link_libraries(ip_filter Qt${QT_VERSION_MAJOR}::Core)
 
 configure_file(ip_filter.tsv ${CMAKE_CURRENT_BINARY_DIR}/ip_filter.tsv COPYONLY)
 
@@ -42,7 +42,7 @@ set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Maintainer <mm@example.com>")
 
 set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${CMAKE_CURRENT_SOURCE_DIR}/Debian/postinst")
 
-set(CPACK_DEBIAN_PACKAGE_DEPENDS libgtest-dev libgmock-dev libtbb-dev libgl1-mesa-dev)
+set(CPACK_DEBIAN_PACKAGE_DEPENDS libgtest-dev libgmock-dev)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 install(FILES ip_filter.tsv DESTINATION bin)

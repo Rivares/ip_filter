@@ -18,7 +18,7 @@ set_target_properties(ip_filter PROPERTIES
 target_link_libraries(${package_name} PUBLIC
     gtest
     gmock
-    pthread
+    pthread # required
 )
 
 # install(TARGETS ${package_name} DESTINATION

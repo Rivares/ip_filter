@@ -18,7 +18,7 @@ TEST(TestGroupName, Subtest_1)
     std::ifstream file("ip_filter.tsv");
     if (file.is_open())
     {
-        std::multiset<std::array<int, cntDigits>, ModeComp> ip_pool;
+        std::multiset<std::array<int, cntDigits>, std::greater<>> ip_pool;
 
         std::string buff = "";
         while (std::getline(file, buff))
